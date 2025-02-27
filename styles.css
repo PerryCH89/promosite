@@ -1,0 +1,311 @@
+/* Global Styles */
+:root {
+    --primary-color: #0a0e17;
+    --secondary-color: #1a1f2e;
+    --accent-color: #ff4d4d;
+    --text-color: #ffffff;
+    --text-secondary: #b3b3b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Space Background */
+.stars, .twinkling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars {
+    background: #000 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1QUZGODlGRDU2NTUxMUUyOUQ1Qjk2MzU0QzAwRDVDMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1QUZGODlGRTU2NTUxMUUyOUQ1Qjk2MzU0QzAwRDVDMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjVBRkY4OUZCNTY1NTExRTI5RDVCOTYzNTRDMDBENUMwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjVBRkY4OUZDNTY1NTExRTI5RDVCOTYzNTRDMDBENUMwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3rYMtAAAADBJREFUeNrswTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4NcAAbgAAVYCYvIAAAAASUVORK5CYII=') repeat top left;
+}
+
+.twinkling {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1QUZGODlGRDU2NTUxMUUyOUQ1Qjk2MzU0QzAwRDVDMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1QUZGODlGRTU2NTUxMUUyOUQ1Qjk2MzU0QzAwRDVDMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjVBRkY4OUZCNTY1NTExRTI5RDVCOTYzNTRDMDBENUMwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjVBRkY4OUZDNTY1NTExRTI5RDVCOTYzNTRDMDBENUMwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3rYMtAAAADBJREFUeNrswTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4NcAAbgAAVYCYvIAAAAASUVORK5CYII=') repeat top left;
+    animation: twinkle 200s linear infinite;
+}
+
+@keyframes twinkle {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 5000px;}
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('POSTER_工作區域 1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    z-index: 1;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.title {
+    font-size: 8rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.7);
+    letter-spacing: 15px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.cta-button {
+    margin-top: 30px;
+}
+
+.watch-trailer {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.watch-trailer:hover {
+    background-color: #ff6666;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+}
+
+.watch-trailer:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(255, 77, 77, 0.3);
+}
+
+/* Synopsis Section */
+.synopsis {
+    padding: 100px 0;
+    background-color: var(--secondary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.synopsis h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.synopsis p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* Visuals Section */
+.visuals {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.poster {
+    flex: 1;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.poster:hover {
+    flex: 1.5;
+}
+
+.poster-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('POSTER_工作區域 1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.poster-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('POSTER_工作區域 1 複本.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.poster-3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('POSTER_工作區域 1 複本 2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.poster-content {
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.poster:hover .poster-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.poster h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.poster p {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.coming-soon {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-bottom: 30px;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 0 15px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .title {
+        font-size: 6rem;
+    }
+    
+    .visuals {
+        flex-direction: column;
+    }
+    
+    .poster {
+        min-height: 400px;
+    }
+    
+    .poster-content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 4rem;
+        letter-spacing: 10px;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .synopsis h2 {
+        font-size: 2rem;
+    }
+    
+    .synopsis p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+    
+    .watch-trailer {
+        padding: 12px 30px;
+    }
+    
+    .coming-soon {
+        font-size: 1.5rem;
+    }
+    
+    .social-link {
+        margin: 0 10px;
+        font-size: 0.8rem;
+    }
+}
