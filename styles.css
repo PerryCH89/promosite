@@ -150,6 +150,18 @@ h1, h2, h3 {
     line-height: 1.8;
 }
 
+.audio-container {
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 500px;
+}
+
+.audio-container audio {
+    width: 100%;
+    border-radius: 3px;
+    background-color: rgba(26, 31, 46, 0.8);
+}
+
 /* Visuals Section */
 .visuals {
     display: flex;
